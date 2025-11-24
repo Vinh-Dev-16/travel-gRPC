@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  builder:
+    build: .
+    volumes:
+      - .:/app # Mount thư mục hiện tại vào /app trong container
+    user: "${UID:-1000}:${GID:-1000}" # Để file sinh ra thuộc quyền user của bạn (không bị lock bởi root)
