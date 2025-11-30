@@ -5,14 +5,16 @@
 
 namespace Travel\Proto\Tour\V1\Metadata;
 
+use Google\Protobuf\Internal\DescriptorPool;
+
 class Tour
 {
-    public static $is_initialized = false;
+    public static bool $is_initialized = false;
 
     public static function initOnce() {
-        $pool = \Google\Protobuf\Internal\DescriptorPool::getGeneratedPool();
+        $pool = DescriptorPool::getGeneratedPool();
 
-        if (static::$is_initialized == true) {
+        if (static::$is_initialized) {
           return;
         }
         $pool->internalAddGeneratedFile(
