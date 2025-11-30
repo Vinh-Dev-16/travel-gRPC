@@ -1,0 +1,42 @@
+syntax = "proto3";
+package tour.v1;
+
+option php_namespace = "Travel\\Proto\\TourSchedule\\V1";
+option php_metadata_namespace = "Travel\\Proto\\TourSchedule\\V1\\Metadata";
+
+service TourScheduleService {
+    rpc GetTourScheduleById (GetTourScheduleByIdRequest) returns (TourScheduleByIdResponse);
+    rpc GetListTourScheduleByTourId (GetListTourScheduleByTourIdRequest) returns (ListTourScheduleByTourIdResponse);
+}
+
+message GetTourScheduleByIdRequest {
+    string tour_schedule_id = 1;
+    string language = 2;
+}
+message TourScheduleByIdResponse {
+    string id = 1;
+    string tour_id = 2;
+    string start_date = 3;
+    string end_date = 4;
+    int32 min_participants = 5;
+    int32 max_participants = 6;
+    int32 available_slots = 7;
+    int32 booked_slots = 8;
+    string guide_id = 9;
+    string tour_title = 10;
+    int32 status = 11;
+    int64 created_at = 12;
+    int64 updated_at = 13;
+}
+
+message GetListTourScheduleByTourIdRequest {
+    string tour_id = 1;
+    int32 status = 2;
+    string language = 3;
+}
+message ListTourScheduleByTourIdResponse {
+    repeated TourScheduleByIdResponse tour_schedules = 1;
+    int32 total = 2;
+    int32 page = 3;
+    int32 page_size = 4;
+}

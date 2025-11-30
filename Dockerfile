@@ -7,6 +7,7 @@ COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr
 
 # 2. Cài đặt các công cụ hệ thống cần thiết cho Protoc
 RUN apk update && apk add --no-cache \
+    bash \
     git \
     zip \
     unzip \
