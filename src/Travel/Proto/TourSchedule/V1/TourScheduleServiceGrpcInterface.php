@@ -2,7 +2,8 @@
 
 namespace Travel\Proto\TourSchedule\V1;
 
-
+use Spiral\RoadRunner\GRPC\ContextInterface;
+use Spiral\RoadRunner\GRPC\ServiceInterface;
 
 /**
  * Service definition for TourScheduleService
