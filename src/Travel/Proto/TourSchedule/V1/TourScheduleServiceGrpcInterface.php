@@ -7,7 +7,7 @@ namespace Travel\Proto\TourSchedule\V1;
 /**
  * Service definition for TourScheduleService
  */
-interface TourScheduleServiceInterface extends ServiceInterface
+interface TourScheduleServiceGrpcInterface extends ServiceInterface
 {
     // Service name from proto file: package.service
     public const NAME = 'tour.v1.TourScheduleService';
