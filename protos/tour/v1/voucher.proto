@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package tour.v1;
+
+option php_namespace = "Travel\\Proto\\Voucher\\V1";
+option php_metadata_namespace = "Travel\\Proto\\Voucher\\V1\\Metadata";
+
+service VoucherService {
+    rpc GetVoucherById (GetVoucherByIdRequest) returns (VoucherResponse);
+}
+
+message GetVoucherByIdRequest {
+    string voucher_id = 1;
+    string language = 2;
+}
+
+message VoucherResponse {
+    string id = 1;
+    string code = 2;
+    string title = 3;
+    string type = 4;
+    double value = 5;
+    int32 quantity = 6;
+    int64 start_date = 7;
+    int64 end_date = 8;
+    string conditions = 9;
+    int64 created_at = 10;
+    int64 updated_at = 11;
+}
